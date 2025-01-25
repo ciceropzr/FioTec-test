@@ -6,6 +6,7 @@ import axios from 'axios';
 import Projetos from './pages/Projetos';
 import Destaque from './pages/Destaque';
 import Favoritos from './pages/Favoritos';
+import Home from './pages/Home';
 
 // Componentes
 import Header from './components/header';
@@ -54,6 +55,14 @@ const App = () => {
         <Header />
         <Routes>
           <Route
+            path="/"
+            element={
+              <div className="container flex-grow-1 p-5 with-max-width">
+                <Home projects={projects} />
+              </div>
+            }
+          />
+          <Route
             path="/meus-favoritos"
             element={
               <div className="container flex-grow-1 p-5 with-max-width">
@@ -73,6 +82,7 @@ const App = () => {
               </div>
             }
           />
+          
         </Routes>
       </div>
     </BrowserRouter>
