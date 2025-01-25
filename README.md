@@ -10,7 +10,7 @@ Para instalar e configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
 1. Clone o repositório:  
    ```bash
-   git clone <URL do repositório>
+   git clone https://github.com/ciceropzr/FioTec-test.git
    cd fiotec
    ```
    
@@ -26,7 +26,7 @@ Para instalar e configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
 4. Inicie o servidor JSON:  
    ```bash
-   json-server --watch db.json --port 3000
+   json-server --watch ./src/db.json --port 3001
    ```
 
 ## Uso
@@ -36,7 +36,7 @@ Esta seção contém alguns exemplos de como utilizar o projeto após a instala�
 ### Executando a Aplicação
 
 - Inicie o servidor de desenvolvimento local conforme descrito na seção de instalação.
-- Acesse a aplicação no navegador pelo endereço `http://localhost:3000`.
+- Acesse a aplicação no navegador pelo endereço `http://localhost:3001`.
 
 ### Recursos Disponíveis
 
@@ -63,16 +63,6 @@ Este projeto utiliza as seguintes tecnologias e bibliotecas:
 - [Json-Server](https://github.com/typicode/json-server)
 - [Vite](https://vitejs.dev/)
 
-## Contribuição
-
-Para contribuir com este projeto, siga estas diretrizes:
-
-- Crie um fork do repositório
-- Crie uma branch para sua feature ou correção (`git checkout -b feature/nome-da-feature`)
-- Commit suas mudanças (`git commit -m 'Adicionar feature X'`)
-- Faça um push para a branch (`git push origin feature/nome-da-feature`)
-- Abra um Pull Request
-
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
@@ -81,5 +71,5 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 Para mais informações ou suporte, entre em contato com:
 
-- **Seu Nome**: [Seu Perfil GitHub](<URL do seu perfil no GitHub>)
-- **Email**: seu.email@example.com
+- **Seu Nome**: [Cicero Matos](<https://github.com/ciceropzr>)
+- **Email**: ciceropzr@gmail.com
