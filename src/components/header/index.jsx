@@ -1,10 +1,16 @@
-// Importações
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react'; // Importa o useState
 import Logo from '../../assets/images/logo.png';
 import UserIcon from '../../assets/images/user_icon.png';
 
 const Header = () => {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false); // Define um estado para o menu
+
+  // Função para alternar o estado do menu
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light px-5 py-4 shadow">
@@ -20,7 +26,7 @@ const Header = () => {
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          onClick={toggleMenu}
           aria-controls="#navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -28,7 +34,7 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
           Menu
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}  my-4  my-md-0`} id="navbarNav">
           <ul className="navbar-nav me-auto offset-2">
             <li className="nav-item">
               <a
@@ -57,7 +63,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <div className="d-flex bg-secondary-subtle p-3 rounded-circle">
+          <div className="d-flex bg-secondary-subtle p-3 rounded-circle d-inline-flex">
             <img src={UserIcon} alt="Perfil" className="" style={{ width: '30px' }} />
           </div>
         </div>
