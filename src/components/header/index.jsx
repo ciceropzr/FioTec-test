@@ -40,7 +40,9 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link fw-bolder ${location.pathname === '/projetos-em-destaque' ? 'active text-primary' : ''}`}
+                className={`nav-link fw-bolder ${
+                  location.pathname.startsWith('/projetos-em-destaque') ? 'active text-primary' : ''
+                }`}
                 href="/projetos-em-destaque"
               >
                 Projetos em Destaque
