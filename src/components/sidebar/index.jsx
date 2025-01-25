@@ -1,52 +1,73 @@
+import { useState } from "react";
+
 const Sidebar = ({ onFilterChange, filter }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const categories = [
+    "Todos",
+    "Ensino",
+    "Pesquisa",
+    "Estímulo à Inovação",
+    "Extensão",
+    "Desenvolvimento Institucional",
+    "Desenvolvimento Científico e Tecnológico",
+  ];
+
   return (
-    <aside className="border-end col-2 bg-body-secondary p-3 shadow rounded-1 h-50" style={{ width: '250px' }}>
-      <h5 className="fw-bolder">Filtrar por categoria</h5>
-      <div className="d-grid gap-2">
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Todos' ? '' : 'text-dark'}`}
-          onClick={() => onFilterChange('Todos')}
-        >
-          Todos
-        </button>
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Ensino' ? '' : 'text-dark'}`}
-          onClick={() => onFilterChange('Ensino')}
-        >
-          Ensino
-        </button>
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Pesquisa' ? '' : 'text-dark'}`} 
-          onClick={() => onFilterChange('Pesquisa')}
-        >
-          Pesquisa
-        </button>
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Estímulo à Inovação' ? '' : 'text-dark'}`} 
-          onClick={() => onFilterChange('Estímulo à Inovação')}
-        >
-          Estímulo à Inovação
-        </button>
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Extensão' ? '' : 'text-dark'}`} 
-          onClick={() => onFilterChange('Extensão')}
-        >
-          Extensão
-        </button>
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Desenvolvimento Institucional' ? '' : 'text-dark'}`} 
-          onClick={() => onFilterChange('Desenvolvimento Institucional')}
-        >
-          Desenvolvimento Institucional
-        </button>
-        <button 
-          className={`btn btn-link text-decoration-none text-start p-0 ${filter === 'Desenvolvimento Científico e Tecnológico' ? '' : 'text-dark'}`} 
-          onClick={() => onFilterChange('Desenvolvimento Científico e Tecnológico')}
-        >
-          Desenvolvimento Científico e Tecnológico
-        </button>
+    <>
+      {/* Sidebar para telas maiores */}
+      <aside className="d-none d-md-block border-end col-2 bg-body-secondary p-3 shadow rounded-1" style={{ width: "250px" }}>
+        <h5 className="fw-bolder">Filtrar por categoria</h5>
+        <div className="d-grid gap-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`btn btn-link text-decoration-none text-start p-0 ${
+                filter === category ? "" : "text-dark"
+              }`}
+              onClick={() => onFilterChange(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </aside>
+
+      {/* Dropdown para telas menores */}
+      <div className="d-block d-md-none mb-3">
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle w-100"
+            type="button"
+            id="dropdownMenuButton"
+            aria-expanded={isDropdownOpen}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            {filter || "Filtrar por categoria"}
+          </button>
+          <ul
+            className={`dropdown-menu w-100 ${isDropdownOpen ? "show" : ""}`}
+            aria-labelledby="dropdownMenuButton"
+          >
+            {categories.map((category) => (
+              <li key={category}>
+                <button
+                  className={`dropdown-item ${
+                    filter === category ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    onFilterChange(category);
+                    setIsDropdownOpen(false); // Fecha o dropdown ao selecionar
+                  }}
+                >
+                  {category}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </aside>
+    </>
   );
 };
 

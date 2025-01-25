@@ -15,7 +15,7 @@ const ProjetoEmDestaque = () => {
   },[id]);
 
   return (
-    <main className="container col-9">
+    <main className="container col-12 col-md-10">
       <div className='d-flex justify-content-between align-items-center mb-4 mx-3'>
         <h2 className='fs-6 fw-bold'>Projetos em Destaque</h2>
       </div>

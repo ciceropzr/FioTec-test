@@ -73,7 +73,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              <div className="container d-flex justify-content-center flex-grow-1 p-5 with-max-width">
+              <div className="container d-flex justify-content-center flex-grow-1 p-5 with-max-width flex-column flex-md-row">
                 <Sidebar onFilterChange={handleFilterChange} filter={filter} />
                 <Routes>
                   <Route path="/projetos-em-destaque/:id" element={<Destaque />} />
