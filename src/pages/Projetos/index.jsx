@@ -27,10 +27,10 @@ const ProjetosDestaques = ({ projects = [] }) => {
                 </p>
               </div>
               <div className="card-footer d-flex justify-content-between bg-white border-0">
-                <button className="btn bg-secondary-subtle px-4 border-0 rounded-pill">
+                <a className="btn bg-secondary-subtle px-4 border-0 rounded-pill" href={`/projeto-em-destaque/${project.id}`}>
                   <img src={View} alt="Ver" className="me-2" style={{ width: '1rem' }}/>
                   Acessar
-                </button>
+                </a>
                 <button className="btn bg-secondary-subtle px-4 rounded-pill border-0">
                   <img src={Heart} alt="Ver" className="me-2" style={{ width: '1rem' }}/> Favoritar
                 </button>

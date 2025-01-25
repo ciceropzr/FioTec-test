@@ -3,8 +3,8 @@ import { Routes, Route, BrowserRouter } from "react-router";
 import axios from 'axios';
 
 // Rotas
-import ProjetosDestaques from './pages/ProjetosDestaques';
-import Favoritos from './pages/Favoritos';
+import Projetos from './pages/Projetos';
+import Destaque from './pages/Destaque';
 
 // Componentes
 import Header from './components/header';
@@ -22,10 +22,19 @@ const App = () => {
   useEffect(() => {
     axios.get('http://localhost:3000/projetos')
       .then(response => {
-        setProjects(response.data)
+        if (response.data.length > 0) {
+          if (filter === 'Todos') {
+            setProjects(response.data);
+          } else {
+            const projects = response.data.filter(project => project.category === filter);
+            setProjects(projects);
+          }
+        } else {
+          setProjects([]);
+        }
         console.log(response.data)
       })
-  },[]);
+  },[filter]);
 
   return (
     <BrowserRouter>
@@ -34,8 +43,8 @@ const App = () => {
         <div className="container d-flex justify-content-center flex-grow-1 p-5" style={{ maxWidth: '1440px' }}>
           <Sidebar onFilterChange={handleFilterChange} filter={filter} />
           <Routes>
-            <Route path="/favoritos" element={<Favoritos />} />
-            <Route path="/" element={<ProjetosDestaques projects={projects} />} />
+            <Route path="/projeto-em-destaque/:id" element={<Destaque projects={projects} />} />
+            <Route path="/" element={<Projetos projects={projects} />} />
           </Routes>
         </div>
       </div>
