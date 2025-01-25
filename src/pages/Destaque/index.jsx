@@ -12,7 +12,7 @@ const ProjetoEmDestaque = () => {
       .then(response => {
         setProject(response.data);
       })
-  },[]);
+  },[id]);
 
   return (
     <main className="container col-9">
@@ -28,6 +28,7 @@ const ProjetoEmDestaque = () => {
             className="img-fluid mb-4 w-100 "
           />
         </figure>
+
         <p className="text-justify lh-lg px-1">{project.description}</p>
       </div>
     </main>
