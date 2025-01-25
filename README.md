@@ -26,7 +26,7 @@ Para instalar e configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
 4. Inicie o servidor JSON:  
    ```bash
-   json-server --watch ./src/db.json --port 3001
+   json-server --watch ./src/db.json --port 3000
    ```
 
 ## Uso
@@ -36,7 +36,7 @@ Esta seção contém alguns exemplos de como utilizar o projeto após a instala�
 ### Executando a Aplicação
 
 - Inicie o servidor de desenvolvimento local conforme descrito na seção de instalação.
-- Acesse a aplicação no navegador pelo endereço `http://localhost:3001`.
+- Acesse a aplicação no navegador pelo endereço `http://localhost:3000`.
 
 ### Recursos Disponíveis
 
