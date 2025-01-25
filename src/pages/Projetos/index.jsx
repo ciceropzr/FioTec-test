@@ -4,13 +4,15 @@ import Heart from '../../assets/images/heart_icon.png';
 
 const ProjetosDestaques = ({ projects = [] }) => {
   return (
-    <main className="container col-9 my-4">
-      <h2>Projetos em Destaque</h2>
-      <p>Mostrando {projects.length} de {projects.length} resultados.</p>
-      <div className="row g-4">
+    <main className="container col-9">
+      <div className='d-flex justify-content-between align-items-center mb-4 mx-3'>
+        <h2 className='fs-5 fw-bold'>Projetos em Destaque</h2>
+        <p>Mostrando {projects.length} de {projects.length} resultados.</p>
+      </div>
+      <div className="row">
         {projects.map((project, index) => (
           <div 
-            className="col-11 col-md-6 col-lg-4" // Ajuste de responsividade 
+            className="col-11 col-md-6 col-lg-4 mb-5" // Ajuste de responsividade 
             key={index} 
             style={{ maxHeight: '500px' }}
           >
@@ -27,7 +29,7 @@ const ProjetosDestaques = ({ projects = [] }) => {
                 </p>
               </div>
               <div className="card-footer d-flex justify-content-between bg-white border-0">
-                <a className="btn bg-secondary-subtle px-4 border-0 rounded-pill" href={`/projeto-em-destaque/${project.id}`}>
+                <a className="btn bg-secondary-subtle px-4 border-0 rounded-pill" href={`/projetos-em-destaque/${project.id}`}>
                   <img src={View} alt="Ver" className="me-2" style={{ width: '1rem' }}/>
                   Acessar
                 </a>

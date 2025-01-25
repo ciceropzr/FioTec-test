@@ -15,16 +15,20 @@ const ProjetoEmDestaque = () => {
   },[]);
 
   return (
-    <main className="container my-4">
-      <h2>Projetos em Destaque</h2>
-      <div className="mt-4">
-        <h3 className="fw-bold">{project.title}</h3>
-        <img
-          src={project.image}
-          alt={project.title}
-          className="img-fluid rounded mb-4"
-        />
-        <p className="text-justify">{project.description}</p>
+    <main className="container col-9">
+      <div className='d-flex justify-content-between align-items-center mb-4 mx-3'>
+        <h2 className='fs-6 fw-bold'>Projetos em Destaque</h2>
+      </div>
+      <div className="mt-4 mx-3">
+        <h3 className="fw-bold fs-5 mb-3">{project.title}</h3>
+        <figure className="figure w-100 overflow-hidden" style={{ maxHeight: '350px' }}>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="img-fluid mb-4 w-100 "
+          />
+        </figure>
+        <p className="text-justify lh-lg px-1">{project.description}</p>
       </div>
     </main>
   );

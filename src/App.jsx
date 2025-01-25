@@ -43,8 +43,8 @@ const App = () => {
         <div className="container d-flex justify-content-center flex-grow-1 p-5" style={{ maxWidth: '1440px' }}>
           <Sidebar onFilterChange={handleFilterChange} filter={filter} />
           <Routes>
-            <Route path="/projeto-em-destaque/:id" element={<Destaque projects={projects} />} />
-            <Route path="/" element={<Projetos projects={projects} />} />
+            <Route path="/projetos-em-destaque/:id" element={<Destaque projects={projects} />} />
+            <Route path="/projetos-em-destaque" element={<Projetos projects={projects} />} />
           </Routes>
         </div>
       </div>
