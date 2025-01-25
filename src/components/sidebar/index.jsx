@@ -1,6 +1,6 @@
 const Sidebar = ({ onFilterChange, filter }) => {
   return (
-    <aside className="border-end col-2 bg-secondary-subtle p-3 shadow rounded-1" style={{ width: '250px' }}>
+    <aside className="border-end col-2 bg-body-secondary p-3 shadow rounded-1 h-50" style={{ width: '250px' }}>
       <h5 className="fw-bolder">Filtrar por categoria</h5>
       <div className="d-grid gap-2">
         <button 
