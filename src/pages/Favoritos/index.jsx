@@ -27,23 +27,18 @@ const Favoritos = () => {
         {favorites.map((project) => (
           <div
             key={project.id}
-            className="col-md-12 mb-5 d-flex"
-            style={{ cursor: 'pointer' }}
+            className="col-12 mb-4 favorito-card"
             onClick={() => handleCardClick(project.id)}
           >
-            <div className="card d-flex flex-row border-0" style={{
-              width: '100%',
-              height: '180px',
-            }}>
+            <div className="card d-flex flex-column flex-md-row border-0">
               <img
                 src={project.image}
-                className="card-img-top img-fluid rounded-0"
+                className="card-img-top favorito-card-img"
                 alt={project.name}
-                style={{ width: '250px', height: '150px', objectFit: 'cover' }}
               />
-              <div className="card-body px-3 py-0">
-                <h5 className="card-title fs-6 fw-bolder">{project.title}</h5>
-                <p className="card-text mb-0 text-truncate-multiline">
+              <div className="card-body">
+                <h5 className="card-title fs-6 fw-bold">{project.title}</h5>
+                <p className="card-text text-truncate-multiline">
                   {project.description}
                 </p>
               </div>

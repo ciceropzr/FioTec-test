@@ -5,7 +5,7 @@ import Heart from '../../assets/images/heart_icon.png';
 const ProjetosDestaques = ({ projects = [], toggleFavorite }) => {
   return (
     <main className="container col-12 col-md-10">
-      <div className='d-flex justify-content-between align-items-center mb-4 mx-3'>
+      <div className='d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 mx-3'>
         <h2 className='fs-5 fw-bold'>Projetos em Destaque</h2>
         <p>Mostrando {projects.length} de {projects.length} resultados.</p>
       </div>
