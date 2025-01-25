@@ -12,7 +12,7 @@ const ProjetosDestaques = ({ projects = [], toggleFavorite }) => {
       <div className="row">
         {projects.map((project, index) => (
           <div 
-            className="col-11 col-md-6 col-lg-4 mb-5" // Ajuste de responsividade 
+            className="col-11 col-md-6 col-lg-4 mb-5"
             key={index} 
             style={{ maxHeight: '500px' }}
           >
@@ -24,14 +24,7 @@ const ProjetosDestaques = ({ projects = [], toggleFavorite }) => {
               />
               <div className="card-body d-flex flex-column justify-content-between">
                 <h5 className="card-title text-center fs-6 fw-bold">{project.title}</h5>
-                <p className="card-text fs-6" style={{
-                    textAlign: 'center',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    display: '-webkit-box', 
-                    WebkitLineClamp: 3, 
-                    WebkitBoxOrient: 'vertical',
-                  }}>
+                <p className="card-text fs-6 text-center text-truncate-multiline">
                   {project.description}
                 </p>
               </div>

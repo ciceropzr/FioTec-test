@@ -28,12 +28,12 @@ const Favoritos = () => {
           <div
             key={project.id}
             className="col-md-12 mb-5 d-flex"
-            style={{ cursor: 'pointer' }} // Adiciona cursor de ponteiro ao card
-            onClick={() => handleCardClick(project.id)} // Evento de clique no card
+            style={{ cursor: 'pointer' }}
+            onClick={() => handleCardClick(project.id)}
           >
             <div className="card d-flex flex-row border-0" style={{
               width: '100%',
-              height: '180px', // Altura padrão para os cards
+              height: '180px',
             }}>
               <img
                 src={project.image}
@@ -43,17 +43,7 @@ const Favoritos = () => {
               />
               <div className="card-body px-3 py-0">
                 <h5 className="card-title fs-6 fw-bolder">{project.title}</h5>
-                <p
-                  className="card-text mb-0"
-                  style={{
-                    textAlign: 'justify',
-                    overflow: 'hidden', // Esconde texto extra
-                    textOverflow: 'ellipsis', // Adiciona reticências no texto longo
-                    display: '-webkit-box', // Compatibilidade com múltiplas linhas
-                    WebkitLineClamp: 3, // Limita a 3 linhas
-                    WebkitBoxOrient: 'vertical',
-                  }}
-                >
+                <p className="card-text mb-0 text-truncate-multiline">
                   {project.description}
                 </p>
               </div>

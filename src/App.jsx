@@ -56,7 +56,7 @@ const App = () => {
           <Route
             path="/meus-favoritos"
             element={
-              <div className="container flex-grow-1 p-5" style={{ maxWidth: '1440px' }}>
+              <div className="container flex-grow-1 p-5 with-max-width">
                 <Favoritos toggleFavorite={toggleFavorite} />
               </div>
             }
@@ -64,7 +64,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              <div className="container d-flex justify-content-center flex-grow-1 p-5" style={{ maxWidth: '1440px' }}>
+              <div className="container d-flex justify-content-center flex-grow-1 p-5 with-max-width">
                 <Sidebar onFilterChange={handleFilterChange} filter={filter} />
                 <Routes>
                   <Route path="/projetos-em-destaque/:id" element={<Destaque />} />

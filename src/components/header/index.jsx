@@ -5,7 +5,7 @@ import UserIcon from '../../assets/images/user_icon.png';
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light px-5 py-4 shadow ">
-      <div className="container-fluid">
+      <div className="container-fluid with-max-width">
         <a className="navbar-brand" href="/">
           <img
             src={Logo}
@@ -34,7 +34,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
     </nav>
   );
 };

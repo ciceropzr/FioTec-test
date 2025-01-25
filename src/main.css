@@ -49,8 +49,14 @@ table {
   border-spacing: 0;
 }
 
-.text-truncate-3 {
+/* Classes Customizadas */
+.with-max-width {
+  max-width: 1440px;
+}
+
+.text-truncate-multiline {
   overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
