@@ -10,7 +10,8 @@ const ProjetosDestaques = ({ projects = [], toggleFavorite }) => {
         <p>Mostrando {projects.length} de {projects.length} resultados.</p>
       </div>
       <div className="row">
-        {projects.map((project, index) => (
+        {projects.length > 0 ?
+          projects.map((project, index) => (
           <div 
             className="col-12 col-md-6 col-lg-4 mb-5"
             key={index} 
@@ -39,7 +40,7 @@ const ProjetosDestaques = ({ projects = [], toggleFavorite }) => {
               </div>
             </div>
           </div>
-        ))}
+        )) : <p className="ms-3">Nenhum projeto encontrado.</p>}
       </div>
     </main>
   );

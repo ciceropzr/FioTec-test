@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importa o useNavigate
 
 const Sidebar = ({ onFilterChange, filter }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate(); // Define o hook de navegação
 
   const categories = [
     "Todos",
@@ -12,6 +14,12 @@ const Sidebar = ({ onFilterChange, filter }) => {
     "Desenvolvimento Institucional",
     "Desenvolvimento Científico e Tecnológico",
   ];
+
+  const handleFilterChange = (category) => {
+    onFilterChange(category);
+    setIsDropdownOpen(false); // Fecha o dropdown ao selecionar
+    navigate("/projetos-em-destaque"); // Redireciona para a página de projetos em destaque
+  };
 
   return (
     <>
@@ -25,7 +33,7 @@ const Sidebar = ({ onFilterChange, filter }) => {
               className={`btn btn-link text-decoration-none text-start p-0 ${
                 filter === category ? "" : "text-dark"
               }`}
-              onClick={() => onFilterChange(category)}
+              onClick={() => handleFilterChange(category)} // Chama a função de manipulação
             >
               {category}
             </button>
@@ -55,10 +63,7 @@ const Sidebar = ({ onFilterChange, filter }) => {
                   className={`dropdown-item ${
                     filter === category ? "active" : ""
                   }`}
-                  onClick={() => {
-                    onFilterChange(category);
-                    setIsDropdownOpen(false); // Fecha o dropdown ao selecionar
-                  }}
+                  onClick={() => handleFilterChange(category)} // Chama a função de manipulação
                 >
                   {category}
                 </button>
