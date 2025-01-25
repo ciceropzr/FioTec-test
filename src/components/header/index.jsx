@@ -30,7 +30,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="d-flex bg-secondary-subtle p-2 rounded-circle">
-            <img src={UserIcon} alt="Perfil" className="" style={{ width: '20px' }} />
+            <img src={UserIcon} alt="Perfil" className="" style={{ width: '20px' }}/>
           </div>
         </div>
       </div>
